@@ -14,7 +14,7 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #fff5f8, #fde2e7, #fbd0d9);
+      background: linear-gradient(135deg, #fef6f9, #fde2e7, #f8d7e3);
       color: #444;
       line-height: 1.8;
       overflow-x: hidden;
@@ -22,55 +22,60 @@
 
     header {
       text-align: center;
-      padding: 60px 20px 40px;
-      background: linear-gradient(120deg, #f8d7e3, #fbeff3);
-      border-bottom: 2px solid #f5b5c0;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      padding: 70px 20px 50px;
+      background: linear-gradient(120deg, #fbd3e9, #f6a6c1, #fbc2eb);
+      border-bottom: 3px solid #f5a3b9;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      border-radius: 0 0 50px 50px;
     }
 
     header h1 {
-      font-size: 3em;
-      color: #c2185b;
+      font-size: 3.2em;
+      color: #fff;
       letter-spacing: 1px;
       margin-bottom: 10px;
+      text-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
     header p {
       font-size: 1.2em;
-      color: #6b4f58;
+      color: #fff;
       font-weight: 500;
+      opacity: 0.9;
     }
 
     .container {
       max-width: 950px;
-      margin: 40px auto 60px;
-      background: #fff;
+      margin: 50px auto;
+      background: rgba(255, 255, 255, 0.6);
       border-radius: 25px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
       padding: 50px 40px;
       animation: fadeIn 1.2s ease-in-out;
     }
 
     section {
-      background: linear-gradient(120deg, #fff, #fff8fa);
-      border-left: 6px solid #c2185b;
-      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.8);
+      border-left: 6px solid #e2608c;
+      border-radius: 20px;
       padding: 25px 30px;
       margin-bottom: 35px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
       transition: all 0.3s ease;
     }
 
     section:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.1);
     }
 
     section h2 {
-      color: #c2185b;
-      font-size: 1.6em;
+      color: #e2608c;
+      font-size: 1.7em;
       margin-bottom: 15px;
       position: relative;
+      font-weight: 600;
     }
 
     section h2::after {
@@ -80,18 +85,18 @@
       bottom: -5px;
       width: 60px;
       height: 3px;
-      background: #f48fb1;
+      background: linear-gradient(to right, #f8a1c4, #f48fb1);
       border-radius: 3px;
     }
 
     .info p {
       margin-bottom: 10px;
       font-size: 1.05em;
-      color: #555;
+      color: #444;
     }
 
     .info strong {
-      color: #c2185b;
+      color: #e2608c;
       font-weight: 600;
     }
 
@@ -99,12 +104,14 @@
     .slideshow-wrapper {
       position: relative;
       width: 100%;
-      background: #fff;
+      background: linear-gradient(145deg, #fde8f0, #fff);
       overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 60px;
+      margin-top: 70px;
+      border-radius: 25px 25px 0 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 
     .slides {
@@ -113,79 +120,75 @@
       height: auto;
       max-height: 90vh;
       object-fit: contain;
-      background-color: #fff;
+      border-radius: 25px;
       transition: opacity 0.8s ease-in-out;
     }
 
     /* Navigation buttons */
-    .prev {
+    .prev, .next {
       cursor: pointer;
       position: absolute;
       top: 50%;
-      left: 0;
       width: auto;
-      padding: 16px;
+      padding: 16px 22px;
       margin-top: -22px;
       color: #fff;
       font-weight: bold;
-      font-size: 22px;
-      border-radius: 0 3px 3px 0;
-      background-color: rgba(0, 0, 0, 0.4);
+      font-size: 26px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #e2608c, #f48fb1);
       user-select: none;
-    }
-
-    .next {
-    cursor: pointer;
-      position: absolute;
-      top: 50%;
-      width: auto;
-      padding: 16px;
-      margin-top: -22px;
-      color: #fff;
-      font-weight: bold;
-      font-size: 22px;
-      border-radius: 0 3px 3px 0;
-      background-color: rgba(0, 0, 0, 0.4);
-      user-select: none;
-      right: 0;
-      border-radius: 3px 0 0 3px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
     }
 
     .prev:hover, .next:hover {
-      background-color: rgba(0, 0, 0, 0.7);
+      transform: scale(1.1);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
     }
+
+    .prev { left: 30px; }
+    .next { right: 30px; }
 
     /* Dots */
     .dots {
       text-align: center;
       position: absolute;
-      bottom: 20px;
+      bottom: 25px;
       width: 100%;
     }
 
     .dot {
       height: 14px;
       width: 14px;
-      margin: 0 5px;
+      margin: 0 6px;
       background-color: #fff;
+      border: 2px solid #e2608c;
       border-radius: 50%;
       display: inline-block;
-      transition: background-color 0.3s ease;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
       cursor: pointer;
     }
 
+    .dot:hover {
+      background-color: #f8a1c4;
+    }
+
     .active {
-      background-color: #c2185b;
+      background-color: #e2608c;
     }
 
     footer {
       text-align: center;
       padding: 25px;
-      color: #777;
-      font-size: 0.95em;
-      background: #fff5f7;
-      border-top: 1px solid #f5b5c0;
+      color: #fff;
+      font-size: 1em;
+      background: linear-gradient(135deg, #e2608c, #f48fb1);
+      border-top: 2px solid #f7b5c6;
+      border-radius: 0 0 25px 25px;
+      letter-spacing: 0.5px;
+      font-weight: 500;
     }
 
     @keyframes fadeIn {
@@ -198,6 +201,7 @@
       .container { padding: 25px; }
       section { padding: 20px; }
       .slides { max-height: 60vh; }
+      .prev, .next { padding: 10px 15px; font-size: 20px; }
     }
   </style>
 </head>
@@ -259,8 +263,9 @@
   </div>
 
   <footer>
-    © 2025 | Designed by Prekshith Hegde
+    || Thank you ||
   </footer>
+  <!-- <h1>Created By Prekshith</h1> -->
 
   <script>
     let slideIndex = 1;
